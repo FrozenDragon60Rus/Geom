@@ -19,7 +19,7 @@ namespace Geom.Figures
             AC = C;
         }
 
-        public override double Square
+        public override double Area
         {
             get => 0.5f * AB * BC * Math.Sin(Angle.Get(AC, AB, BC));
         }

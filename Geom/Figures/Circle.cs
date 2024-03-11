@@ -13,7 +13,7 @@ namespace Geom.Figures
         public Circle(float radius) =>
             this.radius = radius;
 
-        public override double Square
+        public override double Area
         {
             get => Math.PI * Math.Pow(radius, 2);
         }

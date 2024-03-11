@@ -8,6 +8,6 @@ namespace Geom.Figures
 {
     public abstract class Figure
     {
-        public abstract double Square { get; }
+        public abstract double Area { get; }
     }
 }
