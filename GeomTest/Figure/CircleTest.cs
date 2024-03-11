@@ -9,7 +9,7 @@ namespace GeomTest.Figure
         {
             var figure = new Circle(5);
 
-            var square = figure.Square;
+            var square = figure.Area;
             double test = 25;
             Assert.True(square / Math.PI == test);
         }

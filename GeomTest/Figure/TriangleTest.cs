@@ -9,7 +9,7 @@ namespace GeomTest.Figure
         {
             var figure = new Triangle(4, 3, 5);
 
-            var square = figure.Square;
+            var square = figure.Area;
             double testSquare = 6;
             Assert.True(square == testSquare);
         }
