@@ -23,6 +23,10 @@ namespace Geom.Figures
                       && A + C > B
                       && B + C > A;
 
+            right &= A > 0
+                && B > 0
+                && C > 0;
+
             if (!right)
                 throw new Exception("This is not a triangle");
         }

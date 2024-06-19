@@ -21,6 +21,12 @@ namespace GeomTest.Figures
 
 			Assert.Throws<Exception>(createTriangle);
 		}
+		[Fact]
+		public void CheckFormTest()
+		{
+			var figure = new Circle(5);
 
+			Assert.NotNull(figure);
+		}
 	}
 }

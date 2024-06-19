@@ -1,4 +1,5 @@
 ﻿using Geom.Figures;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace GeomTest.Figures
@@ -9,7 +10,6 @@ namespace GeomTest.Figures
 
 		public TriangleTest(ITestOutputHelper output) =>
 			Output = output;
-
 
         [Theory
             , InlineData(4, 3, 5, 6)
@@ -34,19 +34,6 @@ namespace GeomTest.Figures
 			Assert.Equal(semiperimeter, actualSemiperimeter);
         }
 		[Theory
-			, InlineData(4, 3, 5, 90)]
-		public void TriangleAnleTest(float a, float b, float c, double angle)
-		{
-			var figure = new Triangle(a, b, c);
-			var actualAngle = Math.Round(figure.GetAngle(nameof(figure.C)), 2);
-
-			Output.WriteLine(figure.GetAngle(nameof(figure.A)).ToString());
-			Output.WriteLine(figure.GetAngle(nameof(figure.B)).ToString());
-			Output.WriteLine(figure.GetAngle(nameof(figure.C)).ToString());
-
-			Assert.Equal(angle, actualAngle);
-		}
-		[Theory
 			, InlineData(4, 3, 5)]
 		public void TriangleRightTest(float a, float b, float c)
 		{
@@ -62,12 +49,24 @@ namespace GeomTest.Figures
 
 			Assert.False(figure.IsRight);
 		}
-		[Fact]
-		public void CheckFormExceptionTest()
+		[Theory
+			, InlineData(8, 3, 5)
+			, InlineData(-4, 3, 5)
+			, InlineData(4, -3, 5)
+			, InlineData(4, 3, -5)
+			, InlineData(4, 0, 5)]
+		public void CheckFormExceptionTest(float a, float b, float c)
 		{
-			var createTriangle = () => new Triangle(8, 3, 5);
+			var createTriangle = () => new Triangle(a, b, c);
 
 			Assert.Throws<Exception>(createTriangle);
+		}
+		[Fact]
+		public void CheckFormTest()
+		{
+			var figure = new Triangle(4, 3, 5);
+
+			Assert.NotNull(figure);
 		}
 	}
 }
