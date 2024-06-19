@@ -9,11 +9,7 @@ namespace Geom.Figures
 			double
 				powA = Math.Pow(figure.A, 2),
 				powB = Math.Pow(figure.B, 2),
-				powC = Math.Pow(figure.C, 2);
-
-			float isSame(float x) => nameof(x) == pointName ? 1 : x;
-
-			double
+				powC = Math.Pow(figure.C, 2),
 				numerator,
 				denominator;
 
