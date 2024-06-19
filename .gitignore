@@ -364,4 +364,4 @@ FodyWeavers.xsd
 
 # My
 
-Geom\Figures\Triangle.Extension.cs
+Geom/Figures/Triangle.Extension.cs
