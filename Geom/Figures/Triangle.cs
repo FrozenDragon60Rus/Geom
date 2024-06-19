@@ -12,7 +12,7 @@ namespace Geom.Figures
             Math.Sqrt(Semiperimeter * (Semiperimeter - A) * (Semiperimeter - B) * (Semiperimeter - C));
 
         public float Semiperimeter =>
-            (A + B + C) / 2;
+            (A + B + C) / 2; 
 
         public bool IsRight =>
             A * A + B * B == C * C;
