@@ -2,27 +2,29 @@
 
 namespace Geom.Figures
 {
-    public class Triangle : Figure
+    public class Triangle(float a, float b, float c) : Figure()
     {
-        public float AB { get; set; }
-        public float BC { get; set; }
-        public float CA { get; set; }
+        public float A { get; } = a;
+        public float B { get; } = b;
+        public float C { get; } = c;
 
-        public Triangle(float A, float B, float C)
+        public override double Area =>
+            Math.Sqrt(Semiperimeter * (Semiperimeter - A) * (Semiperimeter - B) * (Semiperimeter - C));
+
+        public float Semiperimeter =>
+            (A + B + C) / 2;
+
+        public bool IsRight =>
+            A * A + B * B == C * C;
+        
+        protected override void RightForm()
         {
-            AB = A;
-            BC = B;
-            CA = C;
-        }
+            bool right = A + B > C
+                      && A + C > B
+                      && B + C > A;
 
-        public override double Area
-        {
-            get => 0.5f * AB * BC * Math.Sin(Angle.Get(CA, AB, BC));
+            if (!right)
+                throw new Exception("This is not a triangle");
         }
-
-        public bool isRight =>
-            Angle.RadiansToDegrees(Angle.Get(AB, CA, BC)) == 90d ||
-            Angle.RadiansToDegrees(Angle.Get(CA, BC, AB)) == 90d ||
-            Angle.RadiansToDegrees(Angle.Get(BC, AB, CA)) == 90d;
-    }
+	}
 }

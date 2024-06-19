@@ -2,16 +2,19 @@
 
 namespace Geom.Figures
 {
-    public class Circle : Figure
+    public class Circle(float radius) : Figure()
     {
-        public float radius { get; set; }
+        public float Radius { get; } = radius;
 
-        public Circle(float radius) =>
-            this.radius = radius;
+        public override double Area =>
+            Math.PI * Math.Pow(Radius, 2);
 
-        public override double Area
-        {
-            get => Math.PI * Math.Pow(radius, 2);
-        }
-    }
+		protected override void RightForm()
+		{
+			bool right = Radius > 0;
+
+			if (!right)
+				throw new Exception("This is not a circle");
+		}
+	}
 }

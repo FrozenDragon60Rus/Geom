@@ -1,9 +1,11 @@
-﻿
-
-namespace Geom.Figures
+﻿namespace Geom.Figures
 {
     public abstract class Figure
     {
-        public abstract double Area { get; }
+        protected Figure() =>
+			RightForm();
+
+		public abstract double Area { get; }
+        protected abstract void RightForm();
     }
 }

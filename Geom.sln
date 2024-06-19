@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geom", "Geom\Geom.csproj", "{DA7CC02F-411B-453B-8164-3DA2DC84604B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geom", "Geom\Geom.csproj", "{DA7CC02F-411B-453B-8164-3DA2DC84604B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeomTest", "GeomTest\GeomTest.csproj", "{64F23CA0-C3C7-4875-A4BF-F57D08484CD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeomTest", "GeomTest\GeomTest.csproj", "{64F23CA0-C3C7-4875-A4BF-F57D08484CD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
