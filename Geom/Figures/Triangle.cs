@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Geom.Figures
 {
@@ -14,8 +15,20 @@ namespace Geom.Figures
         public float Semiperimeter =>
             (A + B + C) / 2; 
 
-        public bool IsRight =>
-            A * A + B * B == C * C;
+        public bool IsRight 
+        {
+            get 
+            {
+                float[] point = [A, B, C];
+                point = [.. point.OrderBy(x => x)];
+
+                var powA = point.First() * point.First();
+				var powB = point[1] * point[1];
+				var powC = point.Last() * point.Last();
+
+				return powA + powB == powC;
+            }
+        }
         
         protected override void RightForm()
         {

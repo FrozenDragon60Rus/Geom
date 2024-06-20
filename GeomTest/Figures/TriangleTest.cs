@@ -34,7 +34,8 @@ namespace GeomTest.Figures
 			Assert.Equal(semiperimeter, actualSemiperimeter);
         }
 		[Theory
-			, InlineData(4, 3, 5)]
+			, InlineData(4, 3, 5)
+			, InlineData(5, 3, 4)]
 		public void TriangleRightTest(float a, float b, float c)
 		{
 			var figure = new Triangle(a, b, c);
