@@ -1,4 +1,5 @@
 ﻿using Geom.Figures;
+using System.Reflection;
 using Xunit;
 using Xunit.Abstractions;
 
