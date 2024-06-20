@@ -9,8 +9,15 @@ namespace Geom.Figures
         public float B { get; } = b;
         public float C { get; } = c;
 
-        public override double Area =>
-            Math.Sqrt(Semiperimeter * (Semiperimeter - A) * (Semiperimeter - B) * (Semiperimeter - C));
+        public override double Area
+        {
+            get
+            {
+                var p = Semiperimeter;
+				return Math.Sqrt(p * (p - A) * (p - B) * (p - C));
+			}
+        }
+            
 
         public float Semiperimeter =>
             (A + B + C) / 2; 
